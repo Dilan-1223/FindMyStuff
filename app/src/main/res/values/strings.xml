@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">FindMyStuff</string>
+    <string name="category_prompt">Select Category</string>
+
+    <!-- Category options for spinner -->
+    <string-array name="categories">
+        <item>Select Category</item>
+        <item>Electronics</item>
+        <item>Books</item>
+        <item>Clothing</item>
+        <item>Bags</item>
+        <item>Keys</item>
+    </string-array>
+</resources>

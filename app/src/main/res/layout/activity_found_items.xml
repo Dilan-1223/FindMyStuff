@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FoundItems">
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#F5F5FF">
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <!-- Back Button -->
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_revert"
+                android:contentDescription="Back"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="16dp" />
+
+            <!-- Title and Item Count -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Found Items"
+                    android:textSize="24sp"
+                    android:textColor="#4A5BF5"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:id="@+id/tv_item_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="13 Items"
+                    android:textSize="14sp"
+                    android:textColor="#8A8A8A"
+                    android:background="@drawable/count_badge_background"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="4dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Search Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Search found items.."
+                android:textColorHint="#B0B0B0"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:background="@drawable/search_background"
+                android:paddingHorizontal="16dp"
+                android:drawableEnd="@drawable/icon_search"
+                android:drawablePadding="12dp"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <!-- Filter Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="16dp">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="All"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:background="@drawable/filter_button_selected"
+                        android:paddingHorizontal="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp" />
+
+                    <Button
+                        android:id="@+id/btn_electronics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="Electronics"
+                        android:textColor="#8A8A8A"
+                        android:textSize="14sp"
+                        android:background="@drawable/filter_button_unselected"
+                        android:paddingHorizontal="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp" />
+
+                    <Button
+                        android:id="@+id/btn_keys"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="Keys"
+                        android:textColor="#8A8A8A"
+                        android:textSize="14sp"
+                        android:background="@drawable/filter_button_unselected"
+                        android:paddingHorizontal="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp" />
+
+                    <Button
+                        android:id="@+id/btn_books"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="Books"
+                        android:textColor="#8A8A8A"
+                        android:textSize="14sp"
+                        android:background="@drawable/filter_button_unselected"
+                        android:paddingHorizontal="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp" />
+
+                    <Button
+                        android:id="@+id/btn_cards"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="Cards"
+                        android:textColor="#8A8A8A"
+                        android:textSize="14sp"
+                        android:background="@drawable/filter_button_unselected"
+                        android:paddingHorizontal="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp" />
+
+                    <Button
+                        android:id="@+id/btn_bags"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="Bags"
+                        android:textColor="#8A8A8A"
+                        android:textSize="14sp"
+                        android:background="@drawable/filter_button_unselected"
+                        android:paddingHorizontal="20dp"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+        <!-- Found Items List -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Blue Backpack Item -->
+                <LinearLayout
+                    android:id="@+id/item_backpack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/item_background"
+                    android:padding="16dp"
+                    android:layout_marginBottom="12dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Green Found Indicator -->
+                    <View
+                        android:layout_width="4dp"
+                        android:layout_height="60dp"
+                        android:background="#4CAF50"
+                        android:layout_marginEnd="12dp" />
+
+                    <!-- Item Icon -->
+                    <TextView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/icon_background"
+                        android:padding="8dp"
+                        android:text="🛅"
+                        android:textAlignment="center"
+                        android:textSize="25dp" />
+
+                    <!-- Item Details -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <!-- Found Badge and Time -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="FOUND"
+                                android:textSize="10sp"
+                                android:textColor="#4CAF50"
+                                android:background="@drawable/found_badge_background"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="2dp"
+                                android:layout_marginEnd="8dp" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2 hours ago"
+                                android:textSize="12sp"
+                                android:textColor="#B0B0B0" />
+
+                        </LinearLayout>
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Blue Backpack"
+                            android:textSize="16sp"
+                            android:textColor="#4A5BF5"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="2dp" />
+
+                        <!-- Location -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="At canteen"
+                            android:textSize="14sp"
+                            android:textColor="#666666"
+                            android:layout_marginBottom="2dp" />
+
+                        <!-- Category -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bags"
+                            android:textSize="12sp"
+                            android:textColor="#FFA500" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- SID Card Item -->
+                <LinearLayout
+                    android:id="@+id/item_sid_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/item_background"
+                    android:padding="16dp"
+                    android:layout_marginBottom="12dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Green Found Indicator -->
+                    <View
+                        android:layout_width="4dp"
+                        android:layout_height="60dp"
+                        android:background="#4CAF50"
+                        android:layout_marginEnd="12dp" />
+
+                    <!-- Item Icon -->
+                    <TextView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/icon_background"
+                        android:padding="8dp"
+                        android:text="📇"
+                        android:textAlignment="center"
+                        android:textSize="25dp" />
+
+                    <!-- Item Details -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <!-- Found Badge and Time -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="FOUND"
+                                android:textSize="10sp"
+                                android:textColor="#4CAF50"
+                                android:background="@drawable/found_badge_background"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="2dp"
+                                android:layout_marginEnd="8dp" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2 hours ago"
+                                android:textSize="12sp"
+                                android:textColor="#B0B0B0" />
+
+                        </LinearLayout>
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SID Card"
+                            android:textSize="16sp"
+                            android:textColor="#4A5BF5"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="2dp" />
+
+                        <!-- Location -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Near FOET"
+                            android:textSize="14sp"
+                            android:textColor="#666666"
+                            android:layout_marginBottom="2dp" />
+
+                        <!-- Category -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cards"
+                            android:textSize="12sp"
+                            android:textColor="#FFA500" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!-- Bottom Navigation -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:elevation="8dp"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btn_nav_home"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/icon_home"
+                android:contentDescription="Home" />
+
+            <ImageButton
+                android:id="@+id/btn_nav_chat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/icon_chat"
+                android:contentDescription="Chat" />
+
+            <ImageButton
+                android:id="@+id/btn_nav_profile"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/icon_person"
+                android:contentDescription="Profile" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
